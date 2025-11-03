@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Registration</h1>
+        
+        <div class="info-section">
+            <h2>Information</h2>
+            <p>Igor Smirnov</p>
+            <p>AITS24P</p>
+        </div>
+
+        <hr>
+
+        <form id="registration-form" novalidate>
+            <div class="form-section">
+                <h2>Registration Form</h2>
+                
+                <input type="hidden" id="timestamp" name="timestamp">
+                
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your first and last name">
+                    <div class="error-message" id="fullname-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                    <div class="error-message" id="email-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+358401234567">
+                    <div class="hint">Format: +358 followed by 7-12 digits</div>
+                    <div class="error-message" id="phone-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Birth Date *</label>
+                    <input type="date" id="birthdate" name="birthdate">
+                    <div class="error-message" id="birthdate-error"></div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms">
+                        <span class="checkmark"></span>
+                        I accept the terms and conditions *
+                    </label>
+                    <div class="error-message" id="terms-error"></div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button type="submit" id="submit-btn">Submit Registration</button>
+                    <button type="button" id="clear-btn">Clear Form</button>
+                </div>
+            </div>
+        </form>
+
+        <h2>Registered Users</h2>
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Birth Date</th>
+                    <th>Terms Accepted</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
