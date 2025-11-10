@@ -40,4 +40,4 @@ document.addEventListener('DOMContentLoaded', function() {
         dayCheckboxes.forEach(checkbox => checkbox.checked = false);
         
     });
-});
+}); 
