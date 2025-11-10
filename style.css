@@ -4,64 +4,48 @@
     --brand: #6c4f8d;
     --table-alt: #f9f5ff;
     --border: #e0e0e0;
-    --error: #dc3545;
-    --success: #28a745;
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--page-bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     padding: 20px;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     color: var(--brand);
     margin-bottom: 20px;
-    font-size: 2rem;
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 10px;
+    font-size: 2em;
 }
 
 h2 {
     color: var(--brand);
-    margin: 20px 0 15px 0;
-    font-size: 1.4rem;
-}
-
-.info-section p {
-    margin-bottom: 8px;
-    padding: 5px 0;
+    margin: 20px 0 10px 0;
+    font-size: 1.4em;
 }
 
 hr {
     border: none;
-    border-top: 1px solid var(--border);
-    margin: 25px 0;
+    border-top: 2px solid var(--border);
+    margin: 30px 0;
 }
 
-.form-section {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    margin-bottom: 25px;
+.info p {
+    margin: 5px 0;
+    font-weight: bold;
 }
 
 .form-group {
@@ -71,71 +55,38 @@ hr {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--text);
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group input[type="date"] {
+.form-group input[type="text"] {
     width: 100%;
-    padding: 10px 12px;
+    max-width: 400px;
+    padding: 8px 12px;
     border: 1px solid var(--border);
     border-radius: 4px;
     font-size: 14px;
-    transition: border-color 0.2s;
 }
 
-.form-group input:focus {
-    outline: none;
-    border-color: var(--brand);
-    box-shadow: 0 0 0 2px rgba(108, 79, 141, 0.1);
+.days-checkboxes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.form-group input.error {
-    border-color: var(--error);
-}
-
-.hint {
-    font-size: 12px;
-    color: #666;
-    margin-top: 4px;
-    font-style: italic;
-}
-
-.error-message {
-    color: var(--error);
-    font-size: 12px;
-    margin-top: 4px;
-    min-height: 16px;
-}
-
-.checkbox-group {
-    margin-top: 25px;
-}
-
-.checkbox-label {
+.days-checkboxes label {
     display: flex;
     align-items: center;
+    gap: 5px;
     font-weight: normal;
     cursor: pointer;
 }
 
-.checkbox-label input[type="checkbox"] {
-    margin-right: 8px;
-    width: 18px;
-    height: 18px;
-    accent-color: var(--brand);
-}
-
-.buttons-container {
+.buttons {
     display: flex;
-    gap: 12px;
-    margin-top: 25px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-button {
+.btn {
     background-color: var(--brand);
     color: white;
     border: none;
@@ -143,75 +94,46 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.2s;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #5a4175;
+.btn-secondary {
+    background-color: var(--border);
+    color: var(--text);
 }
 
-button:active {
-    transform: translateY(1px);
-}
-
-#clear-btn {
-    background-color: #6c757d;
-}
-
-#clear-btn:hover {
-    background-color: #5a6268;
+.btn:hover {
+    opacity: 0.9;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    border: 1px solid var(--border);
 }
 
 th, td {
-    border: 1px solid var(--border);
     padding: 12px;
-    text-align: left;
-    font-size: 14px;
+    text-align: center;
+    border: 1px solid var(--border);
 }
 
 th {
     background-color: var(--brand);
     color: white;
-    font-weight: 600;
+    font-weight: bold;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: var(--table-alt);
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    
-    th, td {
-        padding: 8px;
-        font-size: 12px;
-    }
-    
-    button {
-        padding: 8px 16px;
-    }
-    
-    .buttons-container {
-        flex-direction: column;
-    }
+tbody tr:hover {
+    background-color: rgba(108, 79, 141, 0.1);
 }
 
-@media (max-width: 480px) {
-    table {
-        font-size: 11px;
-    }
-    
-    th, td {
-        padding: 6px 4px;
-    }
+td:first-child {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 15px;
 }
