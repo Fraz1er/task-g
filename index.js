@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('userForm');
     const tableBody = document.getElementById('tableBody');
     const timestampInput = document.getElementById('timestamp');
-
+    
     timestampInput.value = new Date().toISOString();
 
     form.addEventListener('submit', function(e) {
