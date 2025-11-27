@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     padding: 20px;
 }
 
@@ -18,12 +18,21 @@ body {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-h1, h2 {
+h1 {
     color: #2c3e50;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+h2 {
+    color: #2c3e50;
+    margin: 40px 0 20px 0;
+    font-size: 1.5em;
+    font-weight: 300;
 }
 
 .form-group {
@@ -33,18 +42,18 @@ h1, h2 {
 label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 500;
     color: #555;
 }
 
-.checkbox-label {
+.checkbox {
     display: flex;
     align-items: center;
     font-weight: normal;
 }
 
-.checkbox-label input {
-    margin-right: 10px;
+.checkbox input {
+    margin-right: 8px;
 }
 
 input[type="text"],
@@ -52,11 +61,11 @@ input[type="email"],
 input[type="tel"],
 input[type="date"] {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #ddd;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+    font-size: 14px;
+    transition: border-color 0.2s;
 }
 
 input[type="text"]:focus,
@@ -67,28 +76,22 @@ input[type="date"]:focus {
     border-color: #3498db;
 }
 
-.hint {
-    font-size: 12px;
-    color: #666;
-    margin-top: 5px;
-}
-
-.error-message {
+.error {
     color: #e74c3c;
-    font-size: 14px;
-    margin-top: 5px;
-    min-height: 20px;
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
 }
 
 button {
     background-color: #3498db;
     color: white;
-    padding: 12px 30px;
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
 button:hover {
@@ -98,7 +101,8 @@ button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 th, td {
@@ -109,10 +113,10 @@ th, td {
 
 th {
     background-color: #f8f9fa;
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 500;
+    color: #555;
 }
 
-tr:hover {
-    background-color: #f8f9fa;
+tr:last-child td {
+    border-bottom: none;
 }

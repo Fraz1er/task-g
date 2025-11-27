@@ -8,49 +8,48 @@
 </head>
 <body>
     <div class="container">
-        <h1>User Registration</h1>
+        <h1>Form with Custom Validation</h1>
         
         <form id="userForm">
             <input type="hidden" id="timestamp" name="timestamp">
             
             <div class="form-group">
                 <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" name="fullName" required>
-                <div class="error-message" id="fullNameError"></div>
+                <input type="text" id="fullName" name="fullName">
+                <div class="error" id="fullNameError"></div>
             </div>
             
             <div class="form-group">
                 <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-                <div class="error-message" id="emailError"></div>
+                <input type="email" id="email" name="email">
+                <div class="error" id="emailError"></div>
             </div>
             
             <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required>
-                <div class="hint">Format: +358 followed by 7-12 digits</div>
-                <div class="error-message" id="phoneError"></div>
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone">
+                <div class="error" id="phoneError"></div>
             </div>
             
             <div class="form-group">
                 <label for="birthDate">Birth Date *</label>
-                <input type="date" id="birthDate" name="birthDate" required>
-                <div class="error-message" id="birthDateError"></div>
+                <input type="date" id="birthDate" name="birthDate">
+                <div class="error" id="birthDateError"></div>
             </div>
             
             <div class="form-group">
-                <label class="checkbox-label">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    I accept the terms and conditions *
+                <label class="checkbox">
+                    <input type="checkbox" id="terms" name="terms">
+                    Accept terms *
                 </label>
-                <div class="error-message" id="termsError"></div>
+                <div class="error" id="termsError"></div>
             </div>
             
             <button type="submit">Submit</button>
         </form>
         
-        <h2>Submitted Users</h2>
-        <table id="userTable">
+        <h2>Submitted Data</h2>
+        <table id="dataTable">
             <thead>
                 <tr>
                     <th>Timestamp</th>
@@ -58,14 +57,14 @@
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Birth Date</th>
-                    <th>Terms Accepted</th>
+                    <th>Accepted Terms</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
             </tbody>
         </table>
     </div>
-    
+
     <script src="index.js"></script>
 </body>
 </html>
