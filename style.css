@@ -1,11 +1,3 @@
-:root {
-    --page-bg: #fcfdfc;
-    --text: #2a2a2a;
-    --brand: #6c4f8d;
-    --table-alt: #f9f5ff;
-    --border: #e0e0e0;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -13,127 +5,114 @@
 }
 
 body {
-    background-color: var(--page-bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
     padding: 20px;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-h1 {
-    color: var(--brand);
+h1, h2 {
+    color: #2c3e50;
     margin-bottom: 20px;
-    font-size: 2em;
-}
-
-h2 {
-    color: var(--brand);
-    margin: 20px 0 10px 0;
-    font-size: 1.4em;
-}
-
-hr {
-    border: none;
-    border-top: 2px solid var(--border);
-    margin: 30px 0;
-}
-
-.info p {
-    margin: 5px 0;
-    font-weight: bold;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-.form-group label {
+label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
 }
 
-.form-group input[type="text"] {
-    width: 100%;
-    max-width: 400px;
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.days-checkboxes {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.days-checkboxes label {
+.checkbox-label {
     display: flex;
     align-items: center;
-    gap: 5px;
     font-weight: normal;
-    cursor: pointer;
 }
 
-.buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+.checkbox-label input {
+    margin-right: 10px;
 }
 
-.btn {
-    background-color: var(--brand);
-    color: white;
-    border: none;
-    padding: 10px 20px;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
     border-radius: 4px;
-    cursor: pointer;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.error-message {
+    color: #e74c3c;
     font-size: 14px;
-    font-weight: bold;
+    margin-top: 5px;
+    min-height: 20px;
 }
 
-.btn-secondary {
-    background-color: var(--border);
-    color: var(--text);
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.btn:hover {
-    opacity: 0.9;
+button:hover {
+    background-color: #2980b9;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 th, td {
     padding: 12px;
-    text-align: center;
-    border: 1px solid var(--border);
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: var(--brand);
-    color: white;
+    background-color: #f8f9fa;
     font-weight: bold;
+    color: #2c3e50;
 }
 
-tbody tr:nth-child(even) {
-    background-color: var(--table-alt);
+tr:hover {
+    background-color: #f8f9fa;
 }
-
-tbody tr:hover {
-    background-color: rgba(108, 79, 141, 0.1);
-}
-
-td:first-child {
-    text-align: left;
-    font-weight: bold;
-    padding-left: 15px;
-} 

@@ -3,67 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Timetable</title>
+    <title>Form with Custom Validation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Weekly Timetable</h1>
+        <h1>User Registration</h1>
         
-        <section class="info">
-            <h2>Information</h2>
-            <p>Igor Smirnov</p>
-            <p>AITS24P</p>
-        </section>
-
-        <hr>
-
-        <section class="add-course">
-            <h2>Add Course</h2>
+        <form id="userForm">
+            <input type="hidden" id="timestamp" name="timestamp">
             
             <div class="form-group">
-                <label for="courseName"><strong>Course name</strong></label>
-                <input type="text" id="courseName" placeholder="e.g., Web Development Basics">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <div class="error-message" id="fullNameError"></div>
             </div>
-
+            
             <div class="form-group">
-                <label><strong>Days (yes = ✅, no = ❌)</strong></label>
-                <div class="days-checkboxes">
-                    <label><input type="checkbox" name="day" value="mon"> Mon</label>
-                    <label><input type="checkbox" name="day" value="tue"> Tue</label>
-                    <label><input type="checkbox" name="day" value="wed"> Wed</label>
-                    <label><input type="checkbox" name="day" value="thu"> Thu</label>
-                    <label><input type="checkbox" name="day" value="fri"> Fri</label>
-                </div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="emailError"></div>
             </div>
-
-            <div class="buttons">
-                <button id="addRowBtn" class="btn">Add row</button>
-                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="hint">Format: +358 followed by 7-12 digits</div>
+                <div class="error-message" id="phoneError"></div>
             </div>
-        </section>
-
-        <hr>
-
-        <section class="course-table">
-            <h2>Course</h2>
-            <table id="courseTable">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </section>
+            
+            <div class="form-group">
+                <label for="birthDate">Birth Date *</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+                <div class="error-message" id="birthDateError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I accept the terms and conditions *
+                </label>
+                <div class="error-message" id="termsError"></div>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+        
+        <h2>Submitted Users</h2>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Birth Date</th>
+                    <th>Terms Accepted</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
     </div>
-
+    
     <script src="index.js"></script>
 </body>
-</html> 
+</html>
